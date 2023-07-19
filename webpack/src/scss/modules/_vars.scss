@@ -1,0 +1,26 @@
+// ********** Color **********
+
+$white_color: #ffffff;
+$violet_color: #6772ff;
+$yellow_color: #FDC43C;
+$gray_color: #f0f3fa;
+$dark_color: #2b2b3b;
+
+// ********** Some **********
+
+$transition: .15s ease-out;
+
+// ********** Parts **********
+
+%primary-btn {
+  font-weight: 600;
+  border-radius: 11px;
+  border: none;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;
+  cursor: pointer;
+  background-color: transparent;
+}

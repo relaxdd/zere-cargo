@@ -1,3 +1,5 @@
+$transition: .15s ease-out;
+
 .container {
   --zc-gutter-x: 15px;
 
@@ -7,12 +9,64 @@
   padding: 0 var(--zc-gutter-x);
 }
 
+.zc_button {
+  max-width: 800px;
+  margin: 65px auto;
+
+  > input {
+    @extend %primary-btn;
+
+    display: flex;
+    height: 80px;
+    width: 100%;
+    border-radius: 16px;
+    background-color: $violet_color;
+    color: white;
+    transition: background-color $transition, color $transition;
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 500;
+
+    &:hover {
+      background-color: $yellow_color;
+      color: $dark_color;
+    }
+  }
+}
+
 .zc_cards {
   display: flex;
   flex-direction: column;
   row-gap: 25px;
 
   &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 53px;
+    height: 112px;
+    width: 100%;
+    border-radius: 11px;
+    background-color: $gray_color;
+    box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.1);
 
+    &__left {
+      display: inline-flex;
+      align-items: center;
+      column-gap: 60px;
+
+      > span {
+        color: $dark_color;
+        font-size: 19px;
+      }
+
+      > span:first-child {
+        font-weight: 700;
+      }
+
+      > span:last-child {
+        font-weight: 500;
+      }
+    }
   }
 }

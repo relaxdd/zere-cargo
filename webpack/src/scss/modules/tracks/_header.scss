@@ -1,5 +1,5 @@
 .zc_header {
-  background-color: #ffffff;
+  background-color: $white_color;
   box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.1);
   padding: 15px 37px;
 
@@ -31,7 +31,7 @@
     }
 
     > span:last-child {
-      color: #2b2b3b;
+      color: $dark_color;
       line-height: 1.55;
       font-size: 19px;
     }
@@ -44,31 +44,22 @@
   }
 
   &__btn {
-    text-align: center;
-    line-height: 1.55;
-    font-weight: 600;
-    border-radius: 11px;
-    border: none;
-    outline: none;
+    // line-height: 1.55;
+    @extend %primary-btn;
     height: 47px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 30px;
-    cursor: pointer;
 
     &:hover {
       opacity: .8;
     }
 
     &_copy {
-      color: #2b2b3b;
-      background-color: #fdc43c;
+      color: $dark_color;
+      background-color: $yellow_color;
     }
 
     &_example {
-      color: #ffffff;
-      background-color: #6772ff;
+      color: $white_color;
+      background-color: $violet_color;
     }
   }
 
@@ -94,7 +85,7 @@
       }
 
       > span:last-child {
-        color: #2b2b3b;
+        color: $dark_color;
         font-size: 16px;
         line-height: 1;
       }
@@ -109,7 +100,7 @@
 
   &__logout > a {
     display: inline-block;
-    color: #2b2b3b;
+    color: $dark_color;
     font-size: 16px;
     line-height: 1;
     font-weight: 500;
