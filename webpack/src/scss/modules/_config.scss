@@ -4,7 +4,6 @@ html {
 }
 
 html, body {
-  // overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
@@ -18,4 +17,18 @@ body {
 
 body, body * {
   box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  cursor: grab !important;
+  width: 28px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  cursor: grab !important;
+  background-color: rgb(246, 246, 248);
+  border-radius: 19px;
+  border: 8px solid rgba(246, 246, 248, 0);
+  background-clip: padding-box;
 }
