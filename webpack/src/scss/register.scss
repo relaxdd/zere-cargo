@@ -1,0 +1,263 @@
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  color: #000;
+  font-size: 16px;
+  font-weight: 400;
+  scroll-behavior: smooth;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden auto;
+  font-family: "TildaSans", sans-serif;
+}
+
+body, body * {
+  box-sizing: border-box;
+
+  &::-webkit-scrollbar {
+    cursor: grab !important;
+  }
+
+  &::-webkit-scrollbar {
+    cursor: grab !important;
+    width: 22px;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    cursor: grab !important;
+    background-color: rgb(246, 246, 248);
+    border-radius: 15px;
+    border: 6px solid rgba(246, 246, 248, 0);
+    background-clip: padding-box;
+  }
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+}
+
+:root {
+  --violet-color: #6772FF;
+}
+
+// ********* Register ************
+
+.page_shell {
+  display: flex;
+  width: 100%;
+  min-height: 100%;
+
+  &__left,
+  &__right {
+    flex: 0 0 auto;
+    width: 50%;
+
+    &__title {
+      font-family: 'Akira-Expanded-Demo', sans-serif;
+      line-height: 1;
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+
+  &__left {
+    position: relative;
+    background-color: var(--violet-color);
+    padding-top: 183px;
+
+    &__title {
+      color: white;
+      margin: 0;
+      font-size: 4.323vw;
+    }
+
+    &__image {
+      max-width: 320px;
+      width: 33.33%;
+      height: auto;
+
+      &:first-child,
+      &:nth-child(2),
+      &:nth-child(3),
+      &:last-child {
+        position: absolute;
+      }
+
+
+      &:first-child {
+        left: 10.938%;
+        top: 32.87%;
+      }
+
+      &:nth-child(2) {
+        left: 58.854%;
+        top: 32.13%;
+      }
+
+      &:nth-child(3) {
+        left: 10.833%;
+        top: 59.537%;
+      }
+
+      &:last-child {
+        left: 57.5%;
+        top: 58.241%;
+      }
+    }
+  }
+
+  &__right {
+    padding: 5.093vh 2.969vw 0 7.552vw;
+    background-image: url('../../images/svg/world-map.svg');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: contain;
+
+    &__title {
+      margin: 20px 0 45px;
+      color: #554d4e;
+      font-size: 3.854vw;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    img {
+      width: 6.667vw;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+    column-gap: 1.719vw;
+    padding-bottom: 25px;
+    //padding-bottom: 53px;
+
+    a {
+      display: inline-flex;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 32px;
+      width: 1.667vw;
+      height: auto;
+    }
+  }
+
+  &__form {
+    border-radius: 16px;
+    background-color: var(--violet-color);
+    border-color: transparent;
+    border-style: solid;
+    box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.2);
+    max-width: 384px;
+    width: 51%;
+    margin: 0 auto;
+    padding: 30px 35px;
+
+    &__title {
+      color: #fff;
+      font-size: 24px;
+      font-family: 'TildaSans', sans-serif;
+      line-height: 1;
+      font-weight: 400;
+      text-align: center;
+      margin: 0 0 30px;
+    }
+
+    &__block {
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+    }
+
+    &__submit,
+    &__field,
+    &__select {
+      border-radius: 6px;
+      width: 100%;
+      font-size: 16px;
+      font-weight: 400;
+      height: 48px;
+      line-height: 1.33;
+      border: 0 none;
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    &__field,
+    &__select {
+      background-color: white;
+      padding: 0 30px;
+      margin: 0;
+
+    }
+
+    &__field {
+      &::-webkit-input-placeholder {
+        color: #CACACA;
+      }
+    }
+
+    &__label {
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+
+      span {
+        color: white;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1;
+      }
+    }
+
+    &__select {
+      cursor: pointer;
+
+      &::after {
+        content: ' ';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 6px 5px 0 5px;
+        border-color: #000 transparent transparent transparent;
+        position: absolute;
+        right: 20px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        pointer-events: none;
+      }
+    }
+
+    &__submit {
+      background-color: #fdc43c;
+      cursor: pointer;
+      font-weight: 600;
+      transition: opacity .15s ease-out;
+
+      &:hover {
+        opacity: .7;
+      }
+    }
+
+    &__link {
+      display: block;
+      color: white;
+      font-size: 19px;
+      margin-top: 20px;
+      text-align: center;
+    }
+  }
+}
+
