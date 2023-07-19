@@ -15,7 +15,7 @@
   <header class="zc_header">
     <div class="zc_header__shell">
       <a href="#">
-        <img src="/images/tracks/tild3633-6436-4435-b339-636665636462___10.svg" alt="test" class="zc_header__logo">
+        <img src="./images/tracks/tild3633-6436-4435-b339-636665636462___10.svg" alt="test" class="zc_header__logo">
       </a>
 
       <div class="zc_header__address">
@@ -25,12 +25,18 @@
       </div>
 
       <div class="zc_header__actions">
-        <input type="button" value="Скопировать" class="zc_header__btn zc_header__btn_copy">
-        <input type="button" value="Пример как добавить" class="zc_header__btn zc_header__btn_example">
+        <input type="button" value="Скопировать" class="zc_header__btn zc_header__btn_copy" id="copy-address">
+
+        <input
+            type="button"
+            value="Пример как добавить"
+            class="zc_header__btn zc_header__btn_example"
+            data-modal="example-modal"
+        >
       </div>
 
       <div class="zc_header__user">
-        <img src="/images/tracks/tild6533-3262-4032-b435-363962633165__user_1.png" alt=""
+        <img src="./images/tracks/tild6533-3262-4032-b435-363962633165__user_1.png" alt=""
              class="zc_header__user__img">
 
         <div class="zc_header__user__info">
@@ -48,14 +54,15 @@
       </div>
     </div>
   </header>
+
   <article>
     <div class="container">
       <div class="zc_button">
-        <input type="button" value="Добавить трек код">
+        <input type="button" value="Добавить трек код" data-modal="add-track-modal">
       </div>
 
       <div class="zc_cards">
-        <div class="zc_cards__item">
+        <div class="zc_cards__item zc-delete-item" data-item-id="1">
           <div class="zc_cards__item__left">
             <span>UYTD54897D744</span>
             <span>Многофункциональные ходунки</span>
@@ -67,13 +74,13 @@
           </div>
 
           <div class="zc_cards__item__right">
-            <button><img src="/images/svg/tild3534-3438-4666-a163-373865663166__trash.png" alt=""></button>
-            <button><img src="/images/svg/tild3033-3932-4635-a533-366438643733__online-registration.png" alt="">
+            <button><img src="./images/svg/tild3534-3438-4666-a163-373865663166__trash.png" alt=""></button>
+            <button><img src="./images/svg/tild3033-3932-4635-a533-366438643733__online-registration.png" alt="">
             </button>
           </div>
         </div>
 
-        <div class="zc_cards__item">
+        <div class="zc_cards__item zc-delete-item" data-item-id="2">
           <div class="zc_cards__item__left">
             <span>UYTD54897D744</span>
             <span>Многофункциональные ходунки</span>
@@ -85,49 +92,64 @@
           </div>
 
           <div class="zc_cards__item__right">
-            <button><img src="/images/svg/tild3534-3438-4666-a163-373865663166__trash.png" alt=""></button>
-            <button><img src="/images/svg/tild3033-3932-4635-a533-366438643733__online-registration.png" alt="">
+            <button><img src="./images/svg/tild3534-3438-4666-a163-373865663166__trash.png" alt=""></button>
+            <button><img src="./images/svg/tild3033-3932-4635-a533-366438643733__online-registration.png" alt="">
             </button>
           </div>
         </div>
-
-
       </div>
     </div>
   </article>
 </main>
 
-<div class="zc_modal">
+<div id="example-modal" class="zc_modal">
+  <div class="zc_modal__dialog">
+    <div class="zc_modal__content" style="border-radius: 16px">
+      <!--  clip-path: polygon(0px 13%, 100% 13%, 100% 93%, 0px 93%);    -->
+      <div
+          class="zc_modal__body"
+          style="padding: 0;overflow: hidden;"
+      >
+        <img
+            src="./images/tracks/tild6632-3532-4136-b536-636636376165___whatsapp_2023-07-14.svg"
+            alt="test"
+            style="max-width: 100%;height: auto;"
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="zc_modal__close zc_modal__block-close">
+    <button type="button" class="zc_modal__close-wrapper zc_modal__block-close-button" aria-label="Закрыть диалог">
+      <img src="./images/svg/modal-close.svg" alt="modal-close">
+    </button>
+  </div>
+</div>
+
+<div id="add-track-modal" class="zc_modal">
   <div class="zc_modal__dialog">
     <div class="zc_modal__content">
-      <div class="zc_modal__body">
-        <div class="zc_modal__header">
-          <h2 class="zc_modal__title">Zere Express Cargo</h2>
-          <p class="zc_modal__text">Добавьте свой трек код посылки</p>
+      <div class="zc_modal__body zc_add_track">
+        <div class="zc_add_track__header">
+          <h2 class="zc_add_track__title">Zere Express Cargo</h2>
+          <p class="zc_add_track__text">Добавьте свой трек код посылки</p>
         </div>
 
-        <form action="/" class="zc_modal__form">
-          <div class="zc_modal__form__field">
-            <input type="text" name="track-code" placeholder="Трек код" required>
-            <input type="text" name="package-name" placeholder="Имя посылки" required>
+        <form id="create-track" class="zc_add_track__form">
+          <div class="zc_add_track__form__field">
+            <input type="text" name="track-code" placeholder="Трек код" required/>
+            <input type="text" name="package-name" placeholder="Имя посылки" required/>
           </div>
 
-          <input type="submit" class="zc_modal__form__btn" value="Добавить">
+          <input type="submit" class="zc_add_track__form__btn" value="Добавить">
         </form>
       </div>
     </div>
   </div>
-  <div class="zc_modal__close zc_modal__block-close" style="right: 32px;">
+
+  <div class="zc_modal__close zc_modal__block-close">
     <button type="button" class="zc_modal__close-wrapper zc_modal__block-close-button" aria-label="Закрыть диалог">
-      <svg role="presentation" class="zc_modal__close-icon" width="23px" height="23px" viewBox="0 0 23 23" version="1.1"
-           xmlns="http://www.w3.org/2000/svg">
-        <g stroke="none" stroke-width="1" fill="#fff" fill-rule="evenodd">
-          <rect transform="translate(11.313708, 11.313708) rotate(-45.000000) translate(-11.313708, -11.313708) "
-                x="10.3137085" y="-3.6862915" width="2" height="30"></rect>
-          <rect transform="translate(11.313708, 11.313708) rotate(-315.000000) translate(-11.313708, -11.313708) "
-                x="10.3137085" y="-3.6862915" width="2" height="30"></rect>
-        </g>
-      </svg>
+      <img src="./images/svg/modal-close.svg" alt="modal-close">
     </button>
   </div>
 </div>

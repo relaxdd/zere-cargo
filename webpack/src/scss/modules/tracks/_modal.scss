@@ -34,7 +34,7 @@
     margin: var(--zc-modal-margin);
     pointer-events: none;
     transition: transform .3s ease-out;
-    transform: translateY(30%) scale(.9);
+    transform: translateY(25%) scale(.9);
     display: flex;
     align-items: center;
     min-height: calc(100% - var(--zc-modal-margin) * 2);
@@ -64,7 +64,7 @@
 
   &__close {
     top: 13px;
-    right: 13px;
+    right: 29px;
     width: 49px;
     height: 49px;
     position: fixed;
@@ -87,9 +87,29 @@
       }
     }
   }
+}
 
-  // ********** Modal Body ********** //
+html.zc_modal__show {
+  overflow: hidden;
+}
 
+@media (min-width: 768px) {
+  html.zc_modal__show body {
+    padding-right: 17px;
+  }
+
+  .zc_modal {
+    &__dialog {
+      max-width: var(--zc-modal-width);
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+}
+
+// *****************
+
+.zc_add_track {
   &__header {
     margin-bottom: 35px;
   }
@@ -161,24 +181,6 @@
       padding-right: 75px;
       font-family: 'Akira-Expanded-Demo', Arial, sans-serif;
       font-weight: 700;
-    }
-  }
-}
-
-html.zc_modal__show {
-  overflow: hidden;
-}
-
-@media (min-width: 768px) {
-  html.zc_modal__show body {
-    padding-right: 17px;
-  }
-
-  .zc_modal {
-    &__dialog {
-      max-width: var(--zc-modal-width);
-      margin-right: auto;
-      margin-left: auto;
     }
   }
 }

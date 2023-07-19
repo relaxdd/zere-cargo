@@ -12,7 +12,7 @@ module.exports = function (env, argv) {
     './src/ts/tracks.ts',
     './src/scss/common.scss',
     './src/scss/tracks.scss',
-    './src/scss/import.scss',
+    // './src/scss/import.scss',
   ];
 
   return {
