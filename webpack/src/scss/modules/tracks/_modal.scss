@@ -12,12 +12,19 @@
   overflow-y: auto;
   outline: 0;
   background-color: #00000080;
-  transition: opacity .15s linear;
   z-index: 9999;
   background-color: rgba(0, 0, 0, .6);
+  opacity: 0;
+  transition: opacity .3s ease-out;
 
-  &.zc_modal__show &__dialog {
-    transform: none;
+  &.zc_modal__active {
+    opacity: 1;
+    transition: opacity .3s ease-out;
+  }
+
+  &.zc_modal__active &__dialog {
+    transform: translateY(0);
+    transition: transform .3s ease-out;
   }
 
   &__dialog {
@@ -27,7 +34,7 @@
     margin: var(--zc-modal-margin);
     pointer-events: none;
     transition: transform .3s ease-out;
-    transform: translateY(-50px);
+    transform: translateY(30%) scale(.9);
     display: flex;
     align-items: center;
     min-height: calc(100% - var(--zc-modal-margin) * 2);
@@ -132,10 +139,14 @@
       font-size: 20px;
       line-height: 1.33;
       outline: none;
-      font-family: 'Akira-Expanded-Demo', Arial, sans-serif;
+      // font-family: 'Akira-Expanded-Demo', Arial, sans-serif;
 
       &::placeholder {
         color: #A3A3A3;
+      }
+
+      &:focus {
+        border-color: $violet_color;
       }
     }
 
@@ -154,7 +165,15 @@
   }
 }
 
+html.zc_modal__show {
+  overflow: hidden;
+}
+
 @media (min-width: 768px) {
+  html.zc_modal__show body {
+    padding-right: 17px;
+  }
+
   .zc_modal {
     &__dialog {
       max-width: var(--zc-modal-width);

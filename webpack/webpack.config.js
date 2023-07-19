@@ -8,7 +8,8 @@ module.exports = function (env, argv) {
   const isDevelopment = argv.mode === 'development';
 
   const entry = [
-    './src/ts/main.ts',
+    // './src/ts/main.ts',
+    './src/ts/tracks.ts',
     './src/scss/common.scss',
     './src/scss/tracks.scss',
     './src/scss/import.scss',
@@ -25,7 +26,7 @@ module.exports = function (env, argv) {
     },
     output: {
       path: path.resolve(__dirname, '../assets/'),
-      filename: 'js/main.js',
+      filename: 'js/tracks.js',
     },
     optimization: {
       minimize: true,

@@ -5,7 +5,9 @@
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
   <title>Zero Express Cargo | Трек номера</title>
+
   <link rel="stylesheet" href="./assets/css/tracks.css">
 </head>
 <body>
@@ -95,7 +97,7 @@
   </article>
 </main>
 
-<div class="zc_modal zc_modal__show" style="display: block">
+<div class="zc_modal">
   <div class="zc_modal__dialog">
     <div class="zc_modal__content">
       <div class="zc_modal__body">
@@ -106,8 +108,8 @@
 
         <form action="/" class="zc_modal__form">
           <div class="zc_modal__form__field">
-            <input type="text" name="track-code" placeholder="Трек код">
-            <input type="text" name="track-code" placeholder="Имя посылки">
+            <input type="text" name="track-code" placeholder="Трек код" required>
+            <input type="text" name="package-name" placeholder="Имя посылки" required>
           </div>
 
           <input type="submit" class="zc_modal__form__btn" value="Добавить">
@@ -129,5 +131,7 @@
     </button>
   </div>
 </div>
+
+<script src="./assets/js/tracks.js"></script>
 </body>
 </html>
