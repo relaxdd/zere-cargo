@@ -44,22 +44,14 @@
   }
 
   &__btn {
-    // line-height: 1.55;
-    @extend %primary-btn;
     height: 47px;
 
-    &:hover {
-      opacity: .8;
-    }
-
     &_copy {
-      color: $dark_color;
-      background-color: $yellow_color;
+      @extend %primary-yellow-btn;
     }
 
     &_example {
-      color: $white_color;
-      background-color: $violet_color;
+      @extend %primary-violet-btn;
     }
   }
 

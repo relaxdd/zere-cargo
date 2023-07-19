@@ -24,3 +24,29 @@ $transition: .15s ease-out;
   cursor: pointer;
   background-color: transparent;
 }
+
+%primary-violet-btn {
+  @extend %primary-btn;
+
+  background-color: $violet_color;
+  color: white;
+  transition: background-color $transition, color $transition;
+
+  &:hover {
+    background-color: $yellow_color;
+    color: $dark_color;
+  }
+}
+
+%primary-yellow-btn {
+  @extend %primary-btn;
+
+  color: $dark_color;
+  background-color: $yellow_color;
+  transition: background-color $transition, color $transition;
+
+  &:hover {
+    color: $white_color;
+    background-color: $violet_color;
+  }
+}

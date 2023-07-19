@@ -14,30 +14,22 @@ $transition: .15s ease-out;
   margin: 65px auto;
 
   > input {
-    @extend %primary-btn;
+    @extend %primary-violet-btn;
 
     display: flex;
     height: 80px;
     width: 100%;
     border-radius: 16px;
-    background-color: $violet_color;
-    color: white;
-    transition: background-color $transition, color $transition;
     text-transform: uppercase;
     font-size: 22px;
     font-weight: 500;
-
-    &:hover {
-      background-color: $yellow_color;
-      color: $dark_color;
-    }
   }
 }
 
 .zc_cards {
   display: flex;
   flex-direction: column;
-  row-gap: 25px;
+  row-gap: 35px;
 
   &__item {
     display: flex;
@@ -50,10 +42,15 @@ $transition: .15s ease-out;
     background-color: $gray_color;
     box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.1);
 
-    &__left {
+    &__left,
+    &__center,
+    &__right {
       display: inline-flex;
       align-items: center;
-      column-gap: 60px;
+    }
+
+    &__left {
+      column-gap: 85px;
 
       > span {
         color: $dark_color;
@@ -66,6 +63,49 @@ $transition: .15s ease-out;
 
       > span:last-child {
         font-weight: 500;
+      }
+    }
+
+    &__center {
+      column-gap: 80px;
+
+      > span {
+      }
+
+      > span:first-child,
+      > span:last-child {
+        color: #A6A8B2;
+        font-size: 19px;
+        font-weight: 400;
+      }
+    }
+
+    &__right {
+      column-gap: 95px;
+
+      > button {
+        display: inline-flex;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+        transition: opacity $transition;
+
+        &:hover {
+          opacity: .7;
+        }
+      }
+
+      > button:first-child > img {
+        width: 32px;
+        height: 32px;
+      }
+
+      > button:last-child > img {
+        width: 40px;
+        height: 40px;
       }
     }
   }
