@@ -1,0 +1,18 @@
+.container {
+  --zc-gutter-x: 15px;
+
+  max-width: calc(1600px + (var(--zc-gutter-x) * 2));
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--zc-gutter-x);
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+
+  &__item {
+
+  }
+}
